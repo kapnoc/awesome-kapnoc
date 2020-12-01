@@ -59,7 +59,7 @@ run_once({ "compton --config ~/.config/awesome/compton.conf" })
 
 -- {{{ Variable definitions
 awful.util.tagnames = { " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }
-
+local lock_command = string.format("%s/.config/awesome/lock.sh", os.getenv("HOME"))
 
 -- Themes define colours, icons, font and wallpapers.
 local theme_path = string.format("%s/.config/awesome/theme/init.lua", os.getenv("HOME"))

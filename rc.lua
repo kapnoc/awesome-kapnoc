@@ -54,6 +54,9 @@ local function run_once(cmd_arr)
     end
 end
 
+run_once({ "redshift -l 48:15" })
+run_once({ "xbacklight =50" })
+run_once({ "xset -b" })
 run_once({ "nm-applet -sm-disable" })
 run_once({ "compton --config ~/.config/awesome/compton.conf" })
 

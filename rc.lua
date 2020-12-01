@@ -60,6 +60,7 @@ run_once({ "compton --config ~/.config/awesome/compton.conf" })
 -- {{{ Variable definitions
 awful.util.tagnames = { " 1 ", " 2 ", " 3 ", " 4 ", " 5 ", " 6 ", " 7 ", " 8 ", " 9 " }
 local lock_command = string.format("%s/.config/awesome/lock.sh", os.getenv("HOME"))
+local launcher_command = "rofi -show run"
 
 -- Themes define colours, icons, font and wallpapers.
 local theme_path = string.format("%s/.config/awesome/theme/init.lua", os.getenv("HOME"))
@@ -252,9 +253,6 @@ globalkeys = gears.table.join(
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
 
     -- On the fly useless gaps change
     awful.key({ altkey  }, "Right", function () lain.util.useless_gaps_resize(7) end,
@@ -270,7 +268,9 @@ globalkeys = gears.table.join(
     awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end,
               {description = "+10%", group = "hotkeys"}),
     awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end,
-              {description = "-10%", group = "hotkeys"})
+              {description = "-10%", group = "hotkeys"}),
+
+    awful.key({ modkey }, "p", function () awful.util.spawn(launcher_command) end)
 )
 
 clientkeys = gears.table.join(

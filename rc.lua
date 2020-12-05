@@ -278,7 +278,7 @@ globalkeys = gears.table.join(
               {description = "+10%", group = "hotkeys"}),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset 'Master' 5%-") end,
               {description = "-10%", group = "hotkeys"}),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -q sset 'Master' toogle") end,
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -q sset 'Master' toggle") end,
               {description = "+10%", group = "hotkeys"}),
 
     awful.key({ modkey }, "p", function () awful.util.spawn(launcher_command) end)

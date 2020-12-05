@@ -356,7 +356,7 @@ local fs_widget =  wibox.container.background(wibox.container.margin(wibox.widge
 -- ALSA volume bar
 local vol_icon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsabar({
-    width = 45, border_width = 0, ticks = true, ticks_size = 5,
+    width = 45, border_width = 0, ticks = true, ticks_size = 5, timeout = 1,
     notification_preset = { font = theme.font },
     --togglechannel = "IEC958,3",
     settings = function()
